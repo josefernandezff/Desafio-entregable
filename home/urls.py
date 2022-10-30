@@ -7,7 +7,8 @@ from home import views
 app_name = "home"
 ### nose para que se hace esto, mismo nombre de la app por buena practica
 urlpatterns = [
-    path('familia/', views.familia, name="integrantes-de-la-familia"),
+    path('family/', views.familia, name="family-list"),
+    path('friend/', views.amigo, name="friend-list"),
 ]
 ### "familia" es solo el nombre de la ruta, siempre termina con /,
 ### lo pongo en español solo para guiarme que relacion tiene, pero deberia ir en ingles
