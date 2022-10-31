@@ -1,19 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amigos</title>
-</head>
-<body>
-    <ul>
+{% extends "inicio/index.html" %}
+{% load static %}
+{% block coderhouse_project_content %}
 
-        <h1>Amigos de la familia:</h1>
-        {% for i in friend %}
-            <li>{{ i }}</li> 
-        {% endfor %}
-    </ul>
+<header class="masthead" style="background-image: url('../../static/inicio/assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-15 col-lg-16 col-xl-14">
+                <div class="site-heading">
+                    <h1>Amigos de los Fernandez</h1>
+                    <span class="subheading">Estos son los hermanos de otra madre</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-</body>
-</html>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+
+            {% for friend in friend %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <h2 class="post-title">Este es {{ friend.name }} {{ friend.last_name }} </h2>
+                    <h3 class="post-subtitle">Tiene unos bien merecidos {{ friend.age }} años</h3>
+                    <h3 class="post-subtitle">Entro a la familia por {{ friend.who }}</h3>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

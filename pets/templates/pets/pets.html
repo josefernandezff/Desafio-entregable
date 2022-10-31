@@ -1,18 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mascotas</title>
-</head>
-<body>
-    <ul>
-        <h1>la mascota de la familia es:</h1>
-        {% for person in pets %}
-            <li>{{ person }}</li> 
-        {% endfor %}
-    </ul>
+{% extends "inicio/index.html" %}
+{% load static %}
+{% block coderhouse_project_content %}
 
-</body>
-</html>
+<header class="masthead" style="background-image: url('../../static/inicio/assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-15 col-lg-16 col-xl-14">
+                <div class="site-heading">
+                    <h1>Mascotas Fernandez</h1>
+                    <span class="subheading">Miembros de la familia con cuatro patas</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+
+            {% for pets in pets %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <h2 class="post-title">El animal se llama: {{ pets.name }} </h2>
+                    <h3 class="post-subtitle">Es un: {{ pets.animal }}</h3>
+                    <h3 class="post-subtitle">Y su raza es: {{ pets.race }}</h3>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

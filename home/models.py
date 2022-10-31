@@ -17,6 +17,7 @@ class Friend(models.Model):
     last_name = models.CharField(max_length=40)
     age = models.IntegerField()
     birth = models.CharField(max_length=40)
+    ### who = models.CharField(max_length=40)
     
     def __str__ (self):
         return f"{self.name} - {self.last_name} - {self.age}"

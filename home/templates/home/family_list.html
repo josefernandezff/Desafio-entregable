@@ -1,19 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Familia</title>
-</head>
-<body>
-    <ul>
-        <h1>El integrante de la familia es:</h1>
-        {% for i in family %}
-            <li>{{ i }}</li> 
-        {% endfor %}
+{% extends "inicio/index.html" %}
+{% load static %}
+{% block coderhouse_project_content %}
 
-    </ul>
+<header class="masthead" style="background-image: url('../../static/inicio/assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-15 col-lg-16 col-xl-14">
+                <div class="site-heading">
+                    <h1>Miembros Fernandez</h1>
+                    <span class="subheading">Estos somos los verdaderos</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
-</body>
-</html>
+<!-- Main Content-->
+<div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+            <!-- Post preview-->
+
+            {% for family in family %}
+                <!-- Post preview-->
+                <div class="post-preview">
+                    <h2 class="post-title">Hola yo soy: {{ family.name }} {{ family.last_name }} </h2>
+                    <h3 class="post-subtitle">Aunque no se note tengo: {{ family.age }}</h3>
+                    <h3 class="post-subtitle">Trabajo en: {{ family.job }}</h3>
+                    <h3 class="post-subtitle">Pase años estudiando: {{ family.studies }}</h3>
+                </div>
+                <!-- Divider-->
+                <hr class="my-4" />
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
