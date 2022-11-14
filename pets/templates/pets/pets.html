@@ -1,6 +1,11 @@
 {% extends "inicio/index.html" %}
 {% load static %}
-{% block coderhouse_project_content %}
+
+{% block inicio_title %}
+Pets
+{% endblock %}
+
+{% block inicio_header %}
 
 <header class="masthead" style="background-image: url('../../static/inicio/assets/img/post-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
@@ -15,13 +20,11 @@
     </div>
 </header>
 
-<!-- Main Content-->
-<div class="container px-4 px-lg-5">
-    <div class="row gx-4 gx-lg-5 justify-content-center">
-        <div class="col-md-10 col-lg-8 col-xl-7">
-            <!-- Post preview-->
+{% endblock %}
 
-            {% for pets in pets %}
+{% block inicio_content %}
+
+{% for pets in pets %}
                 <!-- Post preview-->
                 <div class="post-preview">
                     <h2 class="post-title">El animal se llama: {{ pets.name }} </h2>

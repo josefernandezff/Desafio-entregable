@@ -5,8 +5,6 @@
 Family
 {% endblock %}
 
-
-
 {% block inicio_header %}
 
 <header class="masthead" style="background-image: url('../../static/inicio/assets/img/post-bg.jpg')">
@@ -14,12 +12,11 @@ Family
         <div class="row gx-4 gx-lg-5 justify-content-center">
             <div class="col-md-15 col-lg-16 col-xl-14">
                 <div class="site-heading">
-                    <h1>Miembros Fernandez</h1>
-                    <span class="subheading">Estos somos los verdaderos</span>
+                    <h1>Crear nuevo familiar</h1>
+                    <span class="subheading">Sumemos un Fernandez mas a la familia</span>
                 </div>
             </div>
         </div>
-        <a class="button_custom" href="{% url 'family:family-add' %}">Crear nuevo familiar</a>
     </div>
 </header>
 {% endblock %}  
@@ -27,18 +24,15 @@ Family
 {% block inicio_content %}
 
             {% for family in family %}
-                <!-- Post preview-->
-                <div class="post-preview">
-                    <h2 class="post-title">Hola yo soy un miembro mas: {{ family.name }} {{ family.last_name }} </h2>
-                    <h3 class="post-meta">Aunque no se note tengo: {{ family.age }}</h3>
-                    <h3 class="post-meta">Trabajo en: {{ family.job }}</h3>
-                    <h3 class="post-meta">Pase años estudiando: {{ family.studies }}</h3>
-                    <p class="post-meta">miembro unido el: {{ family.created_at }} por
-                        <a href="#!">Start Bootstrap</a>
-                    </p>
-                </div>
-                <!-- Divider-->
-                <hr class="my-4" />
+            <div>
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-primary" value="Agregar a la familia" />
+                </form>
+            </div>
+            <!-- Divider-->
+            <hr class="my-4" />
             {% endfor %}
 
         </div>

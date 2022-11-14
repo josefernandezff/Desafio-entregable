@@ -8,7 +8,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Blog familiar</title>
+        
+        <title>
+            {% block inicio_title %}
+                Home
+            {% endblock %}
+        </title>
+        
         <link rel="icon" type="image/x-icon" href="{% static 'inicio/assets/favicon.ico' %}" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -37,7 +43,7 @@
                 </div>
             </div>
         </nav>
-        {% block coderhouse_project_content %}
+        {% block inicio_header %}
         <!-- Page Header-->
         <header class="masthead" style="background-image: url('../../static/inicio/assets/img/pesto.jpeg')">
             <div class="container position-relative px-4 px-lg-5">
@@ -51,11 +57,15 @@
                 </div>
             </div>
         </header>
+        {% endblock %}
+
         <!-- Main Content-->
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
+                    {% block inicio_content %}
+
                     <div class="post-preview">
                         <a href="post.html">
                             <h2 class="post-title">Si sos Fernandez este es tu blog, esta es tu familia</h2>
@@ -71,10 +81,11 @@
                     <hr class="my-4" />
                     <!-- Pager-->
                     <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
+                    {% endblock %}
+
                 </div>
             </div>
         </div>
-        {% endblock %}
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
